@@ -12,10 +12,12 @@ const createEvent = asyncHandler(async (req, res) => {
     const valiData = await eventValidated.validate(data);
     const event = await Event.create(valiData);
     console.log("event: ", event.id);
+    res.status(201).json({message: "Thêm event thành công"})
   } catch (err) {
     console.log("err: ", err);
+    res.status(401)
+    throw new Error('Có trường còn thiếu')
   }
-  res.status(201).json({ mesage: "thành công" });
 });
 
 // routes.route('/').get(getAllEvent);

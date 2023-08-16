@@ -33,5 +33,4 @@ eventSchema.plugin(mongoosePaginate);
 const Event = model("Event", eventSchema);
 Event.paginate().then({});
 
-module.exports = { processingSchema };
 module.exports = Event;

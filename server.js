@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 // routing
 app.use("/api/questions", require("./routes/questionRoutes"));
 app.use("/api/events", require("./routes/eventRoutes"));
+app.use("/api/tasks", require("./routes/taskRoutes"));
 
 // middleware sau khi tra ve response 
 app.use(errorHandler);
